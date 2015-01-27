@@ -35,7 +35,7 @@ public class MealListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stream_main_list);
 
-		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME);
 		getActionBar().setCustomView(R.layout.actionbar_settings);
 		getActionBar().getCustomView().setOnClickListener(
 				new OnClickListener() {

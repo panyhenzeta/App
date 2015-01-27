@@ -1,7 +1,11 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.parse.integratingfacebooktutorial.R;
+import com.parse.integratingfacebooktutorial.R.id;
+import com.parse.integratingfacebooktutorial.R.layout;
 
 import android.content.Context;
 import android.graphics.Rect;

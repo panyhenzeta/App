@@ -1,4 +1,4 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import android.graphics.drawable.Drawable;
 

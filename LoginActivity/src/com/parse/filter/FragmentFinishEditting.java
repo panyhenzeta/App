@@ -1,4 +1,4 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -19,6 +19,12 @@ import com.parse.ParseFile;
 import com.parse.ParseImageView;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.integratingfacebooktutorial.Meal;
+import com.parse.integratingfacebooktutorial.NewMealActivity;
+import com.parse.integratingfacebooktutorial.R;
+import com.parse.integratingfacebooktutorial.R.array;
+import com.parse.integratingfacebooktutorial.R.id;
+import com.parse.integratingfacebooktutorial.R.layout;
 
 public class FragmentFinishEditting extends Fragment {
 	private Button saveButton;

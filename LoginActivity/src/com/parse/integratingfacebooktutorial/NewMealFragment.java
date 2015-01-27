@@ -26,6 +26,7 @@ import com.parse.ParseFile;
 import com.parse.ParseImageView;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.filter.EditImage;
 
 /*
  * This fragment manages the data entry for a

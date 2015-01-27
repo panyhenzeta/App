@@ -1,4 +1,4 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;

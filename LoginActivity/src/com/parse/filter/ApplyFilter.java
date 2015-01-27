@@ -1,4 +1,4 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.parse.integratingfacebooktutorial;
+package com.parse.filter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -31,6 +31,13 @@ import android.widget.Toast;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.SaveCallback;
+import com.parse.filter.QuickActionPopup.OnActionItemClickListener;
+import com.parse.integratingfacebooktutorial.CameraFragment;
+import com.parse.integratingfacebooktutorial.Meal;
+import com.parse.integratingfacebooktutorial.R;
+import com.parse.integratingfacebooktutorial.R.drawable;
+import com.parse.integratingfacebooktutorial.R.id;
+import com.parse.integratingfacebooktutorial.R.layout;
 
 public class EditImage extends Activity {
 
