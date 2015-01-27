@@ -1,5 +1,8 @@
 package com.parse.integratingfacebooktutorial;
 
+import java.util.Arrays;
+import java.util.List;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -19,12 +22,6 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
-
-import java.util.Arrays;
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class LoginActivity extends Activity {
 

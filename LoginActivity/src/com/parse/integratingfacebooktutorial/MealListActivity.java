@@ -2,10 +2,8 @@ package com.parse.integratingfacebooktutorial;
 
 import java.util.List;
 
+import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ListActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
@@ -15,8 +13,7 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
+import android.view.View.OnClickListener;
 
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
@@ -37,6 +34,18 @@ public class MealListActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.stream_main_list);
+
+		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getActionBar().setCustomView(R.layout.actionbar_settings);
+		getActionBar().getCustomView().setOnClickListener(
+				new OnClickListener() {
+					@Override
+					// User Logout
+					public void onClick(View v) {
+						ParseUser.logOut();
+						userLogout();
+					}
+				});
 
 		// Subclasses of ParseQueryAdapter
 		mainAdapter = new StreamAdapter(this);
@@ -101,6 +110,14 @@ public class MealListActivity extends Activity {
 		});
 	}
 
+	protected void userLogout() {
+		Intent intent = new Intent(this, LoginActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
+				| Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
+
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.activity_meal_list, menu);
@@ -113,17 +130,7 @@ public class MealListActivity extends Activity {
 	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-
-		// User logout
-		case R.id.action_logout: {
-			ParseUser.logOut();
-			Intent intent = new Intent(this, LoginActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
-					| Intent.FLAG_ACTIVITY_NEW_TASK);
-			startActivity(intent);
-			break;
-		}
+		switch (item.getItemId()) {		
 		case R.id.user_details: {
 			Intent userIntent = new Intent(this, UserDetailActivity.class);
 			MealHelper.setMealUser(ParseUser.getCurrentUser());

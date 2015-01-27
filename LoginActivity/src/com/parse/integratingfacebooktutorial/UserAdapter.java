@@ -1,7 +1,5 @@
 package com.parse.integratingfacebooktutorial;
 
-import java.util.Arrays;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;

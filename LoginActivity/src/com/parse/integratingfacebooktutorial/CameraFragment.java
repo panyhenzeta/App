@@ -1,21 +1,14 @@
 package com.parse.integratingfacebooktutorial;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
 
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
-import android.view.SurfaceView;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -26,9 +19,7 @@ public class CameraFragment extends Fragment {
 
 	public static final String TAG = "CameraFragment";
 
-	private SurfaceView surfaceView;
 	private ParseFile photoFile;
-	private ImageButton photoButton;
 	private int CAMERA_REQUEST = 1;
 
 	@Override

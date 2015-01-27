@@ -15,24 +15,30 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarSplitStyle">@style/MyActionBar</item>
     </style>
 
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/actionbar_background</item>
         <item name="android:titleTextStyle">@style/TitleColor</item>
+        <item name="android:height">50dp</item>
+        <item name="android:backgroundSplit">@color/bottom_bar_background</item>
     </style>
 
     <style name="TitleColor" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="MyWindowTitleBackground" parent="@android:style/Theme.Holo">
         <item name="android:background">#000000</item>
     </style>
+
     <style name="title_bar" parent="@android:style/Theme.Holo">
         <item name="android:singleLine">false</item>
         <item name="android:textAppearance">@android:style/TextAppearance.WindowTitle</item>
         <item name="android:shadowColor">#BB0000FF</item>
         <item name="android:shadowRadius">2.75</item>
     </style>
+
 </resources>

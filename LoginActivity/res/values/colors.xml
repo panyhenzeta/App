@@ -8,5 +8,5 @@
     <color name="button_color">#00527A</color>
     <color name="WHITE">#FFFFFF</color>
     <color name="user_border_color">#707070</color>
-
+    <color name="bottom_bar_background">#1A1A1A</color>
 </resources>

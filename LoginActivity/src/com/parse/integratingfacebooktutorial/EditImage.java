@@ -38,7 +38,7 @@ public class EditImage extends Activity {
 	private static final int ID_PLUS = 1;
 	private static final int ID_X = 2;
 	private ImageView imageView;
-	private Bitmap nr, bitmap, bitmap_glow, bitmap_original;
+	private Bitmap bitmap, bitmap_glow, bitmap_original;
 	private Bitmap bitmap_grayscale, bitmap_sharpen;
 	private Bitmap bitmap_cmR, bitmap_cmG, bitmap_cmB, bitmap_edge;
 	private Uri imageUri;
