@@ -86,7 +86,7 @@ public class MealListActivity extends Activity {
 							SwipeMenu menu, int index) {
 						ApplicationInfo item = mAppList.get(position);
 						switch (index) {
-						case 0:
+						case 0:							
 							Meal selectedFromList = (Meal) (swipeImageList
 									.getItemAtPosition(position));
 							launchIntent(selectedFromList.getAuthor());

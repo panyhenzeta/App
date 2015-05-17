@@ -38,6 +38,7 @@ import com.parse.integratingfacebooktutorial.R;
 import com.parse.integratingfacebooktutorial.R.drawable;
 import com.parse.integratingfacebooktutorial.R.id;
 import com.parse.integratingfacebooktutorial.R.layout;
+import com.parse.model.Photo;
 
 public class EditImage extends Activity {
 
@@ -52,7 +53,8 @@ public class EditImage extends Activity {
 	private ParseFile photoFile;
 	ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 
-	Meal meal = new Meal();
+//	Meal meal = new Meal();
+	Photo meal = new Photo();
 
 	// private static final String IMAGE_RESOURCE = "image-resource";
 	// private int image;
@@ -62,7 +64,7 @@ public class EditImage extends Activity {
 
 		boolean titled = requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 
-		meal = (Meal) getIntent().getExtras().getSerializable("meal");
+		meal = (Photo) getIntent().getExtras().getSerializable("meal");
 
 		setContentView(R.layout.activity_edit_image);
 		if (titled) {
@@ -120,7 +122,6 @@ public class EditImage extends Activity {
 							getContentResolver().openInputStream(imageUri),
 							null, options);
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
@@ -151,8 +152,7 @@ public class EditImage extends Activity {
 		 * (imageUri), null, options); bitmap_original =
 		 * BitmapFactory.decodeStream
 		 * (getContentResolver().openInputStream(imageUri), null, options); }
-		 * catch (FileNotFoundException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
+		 * catch (FileNotFoundException e) { e.printStackTrace(); }
 		 * 
 		 * 
 		 * imageView.setImageBitmap(bitmap);
@@ -298,10 +298,8 @@ public class EditImage extends Activity {
 									null, null);
 
 						} catch (FileNotFoundException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 
@@ -310,8 +308,9 @@ public class EditImage extends Activity {
 
 						// startActivity(mealList);
 
-						meal.setPhotoFile(photoFile);
-						System.out.println("asdafaf " + meal.getUsername());
+//						meal.setPhotoFile(photoFile);
+						meal.setImage(photoFile);
+					
 
 						meal.saveInBackground(new SaveCallback() {
 
@@ -402,18 +401,19 @@ public class EditImage extends Activity {
 
 	}
 
-	private String getRealPathFromURI(Uri contentURI) {
-		Cursor cursor = getContentResolver().query(contentURI, null, null,
-				null, null);
-		cursor.moveToFirst();
-		int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-		System.out.println("idx = " + idx);
-		if (idx == -1) {
-			return new String("null");
-		}
+//	private String getRealPathFromURI(Uri contentURI) {
+//		Cursor cursor = getContentResolver().query(contentURI, null, null,
+//				null, null);
+//		cursor.moveToFirst();
+//		int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+//		System.out.println("idx = " + idx);
+//		if (idx == -1) {
+//			return new String("null");
+//		}
+//
+//		return cursor.getString(idx);
+//	}
 
-		return cursor.getString(idx);
-	}
 
 	private void changeImageButtonBackground(int pressedButtonID) {
 		findViewById(R.id.Button1).setBackgroundResource(
@@ -445,25 +445,25 @@ public class EditImage extends Activity {
 		return bitmap_temp;
 	}
 
-	private int getImageOrientation() {
-		final String[] imageColumns = { MediaStore.Images.Media._ID,
-				MediaStore.Images.ImageColumns.ORIENTATION };
-		final String imageOrderBy = MediaStore.Images.Media._ID + " DESC";
-		Cursor cursor = getContentResolver().query(
-				MediaStore.Images.Media.EXTERNAL_CONTENT_URI, imageColumns,
-				null, null, imageOrderBy);
-
-		if (cursor.moveToFirst()) {
-			int orientation = cursor
-					.getInt(cursor
-							.getColumnIndex(MediaStore.Images.ImageColumns.ORIENTATION));
-			System.out.println("orientation===" + orientation);
-			cursor.close();
-			return orientation;
-		} else {
-			return 0;
-		}
-	}
+//	private int getImageOrientation() {
+//		final String[] imageColumns = { MediaStore.Images.Media._ID,
+//				MediaStore.Images.ImageColumns.ORIENTATION };
+//		final String imageOrderBy = MediaStore.Images.Media._ID + " DESC";
+//		Cursor cursor = getContentResolver().query(
+//				MediaStore.Images.Media.EXTERNAL_CONTENT_URI, imageColumns,
+//				null, null, imageOrderBy);
+//
+//		if (cursor.moveToFirst()) {
+//			int orientation = cursor
+//					.getInt(cursor
+//							.getColumnIndex(MediaStore.Images.ImageColumns.ORIENTATION));
+//			System.out.println("orientation===" + orientation);
+//			cursor.close();
+//			return orientation;
+//		} else {
+//			return 0;
+//		}
+//	}
 
 	public static Bitmap getBitmapFromURL(String src) {
 		try {

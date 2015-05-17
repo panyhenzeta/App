@@ -45,6 +45,7 @@ public class NewMealFragment extends Fragment {
 	private TextView mealName;
 	private Spinner mealRating;
 	private ParseImageView mealPreview;
+	private static int counter = 3;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -89,7 +90,10 @@ public class NewMealFragment extends Fragment {
 				// When the user clicks "Save," upload the meal to Parse
 				// Add data to the meal object:
 				meal.setTitle(mealName.getText().toString());
-
+				
+				//Add object number to access other place
+				meal.setObjectNumber(counter);
+				
 				// Associate the meal with the current user
 				meal.setAuthor(ParseUser.getCurrentUser());
 				
@@ -98,6 +102,9 @@ public class NewMealFragment extends Fragment {
 
 				// Add the rating
 				meal.setRating(mealRating.getSelectedItem().toString());
+				
+				//Add star icon
+				meal.setStar(R.drawable.ic_action_favorite);
 
 				// If the user added a photo, that data will be
 				// added in the CameraFragment
@@ -110,6 +117,7 @@ public class NewMealFragment extends Fragment {
 						if (e == null) {
 							getActivity().setResult(Activity.RESULT_OK);
 							getActivity().finish();
+							counter++;
 						} else {
 							Toast.makeText(
 									getActivity().getApplicationContext(),
