@@ -87,20 +87,6 @@ public class StreamAdapter extends ParseQueryAdapter<Meal> {
 				like.saveInBackground();				
 			}
 		});
-
-//		final ImageView star = (ImageView) v.findViewById(R.id.image_star);
-//		star.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				star.setImageResource(R.drawable.ic_action_favorite_pressed);
-//				
-//				Like like = new Like();
-//				like.setPhoto(meal.getPhotoFile());
-//				like.setUserLike(meal.getAuthor());
-//				like.saveInBackground();
-//			}
-//		});
-
 		return v;
 	}
 
